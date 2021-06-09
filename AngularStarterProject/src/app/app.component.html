@@ -12,17 +12,15 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <mat-nav-list>
-          <a mat-button >Fakulteti</a>
+          <a mat-button [routerLink] = "['/fakultet']" >Fakulteti</a>
         </mat-nav-list>
         <mat-nav-list>
-          <a mat-button >Departmani</a>
+          <a mat-button [routerLink] = "['/departman']" >Departmani</a>
         </mat-nav-list>
         <mat-nav-list>
-          <a mat-button >Statusi</a>
+          <a mat-button [routerLink] = "['/status']" >Statusi</a>
         </mat-nav-list>
-        <mat-nav-list>
-          <a mat-button >Studenti</a>
-        </mat-nav-list>
+
       </mat-expansion-panel>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -32,13 +30,13 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <mat-nav-list>
-          <a  mat-button>Početna</a>
+          <a  mat-button [routerLink] = "['/home']">Početna</a>
         </mat-nav-list>
         <mat-nav-list>
-          <a mat-button>Autor</a>
+          <a mat-button [routerLink] = "['/author']" >Autor</a>
         </mat-nav-list>
         <mat-nav-list>
-          <a  mat-button>O nama</a>
+          <a  mat-button [routerLink] = "['/about']" >O nama</a>
         </mat-nav-list>
       </mat-expansion-panel>
     </mat-accordion>

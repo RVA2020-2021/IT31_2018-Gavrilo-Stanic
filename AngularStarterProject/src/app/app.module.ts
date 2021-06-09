@@ -11,6 +11,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatExpansionModule } from '@angular/material/expansion';
+import {MatSnackBarModule} from '@angular/material/snack-bar'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
+import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {  MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +29,13 @@ import { FacultyComponent } from './components/faculty/faculty.component';
 import { DepartmentComponent } from './components/department/department.component';
 import { StatusComponent } from './components/status/status.component';
 import { StudentComponent } from './components/student/student.component';
+import { FakultetDialogComponent } from './components/dialogs/fakultet-dialog/fakultet-dialog.component';
+import { DepartmanDialogComponent } from './components/dialogs/departman-dialog/departman-dialog.component';
+import { StatusDialogComponent } from './components/dialogs/status-dialog/status-dialog.component';
+import { StudentDialogComponent } from './components/dialogs/student-dialog/student-dialog.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +46,11 @@ import { StudentComponent } from './components/student/student.component';
     FacultyComponent,
     DepartmentComponent,
     StatusComponent,
-    StudentComponent
+    StudentComponent,
+    FakultetDialogComponent,
+    DepartmanDialogComponent,
+    StatusDialogComponent,
+    StudentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +64,16 @@ import { StudentComponent } from './components/student/student.component';
     MatGridListModule,
     MatExpansionModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatSortModule,
+    MatPaginatorModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

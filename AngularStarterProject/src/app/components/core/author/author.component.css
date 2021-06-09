@@ -1,0 +1,27 @@
+.flx{
+  display: flex;
+  justify-content: center;
+}
+
+
+body{
+  display: flex;
+  justify-content: center;
+}
+
+div{
+  border-radius: 25px;
+  background-color: white;
+  align-self: center;
+  margin: auto;
+  margin-top: 7%;
+  box-shadow: 10px 10px 5px grey;
+  width: 60%;
+  padding: 1rem;
+
+  font-size: 50px;
+  font-weight: bold;
+
+}
+
+

@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import rva.jpa.Departman;
 import rva.jpa.Status;
 import rva.jpa.Student;
+import rva.repository.DepartmanRepository;
 import rva.repository.StudentRepository;
 
 @CrossOrigin
@@ -32,6 +34,9 @@ public class StudentRestController {
 	@Autowired
 	private StudentRepository studentRepository;
 	
+	@Autowired
+	private DepartmanRepository departmanRepository;
+	
 	@GetMapping("student")
 	@ApiOperation(value = "Vraća kolekciju svih studenata iz baze podataka")
 	public Collection<Student> getStudents(){
@@ -42,6 +47,14 @@ public class StudentRestController {
 	public Student getStudent(@PathVariable("id") Integer id) {
 		return studentRepository.getOne(id);
 	}
+	
+	@GetMapping("studentiSaDepartmana/{id}")
+	@ApiOperation(value = "Vraća studente iz baze podataka koji pripadaju departmanu koji sadrzi id-vrednost porsledjenu kao path varijabla")
+	public Collection<Student> getStudentFromDepartment(@PathVariable("id") Integer id) {
+		Departman d =  departmanRepository.getOne(id);
+		return studentRepository.findByDepartman(d);
+	}
+	
 	@GetMapping("studentIme/{ime}")
 	@ApiOperation(value = "Vraća kolekciju svih studenata iz baze podataka čije ime sadrži string koji je prosledjen kao path varijabla")
 	public Collection<Student> getStudentByIme(@PathVariable("ime") String ime){
